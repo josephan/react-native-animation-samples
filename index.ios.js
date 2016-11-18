@@ -1,11 +1,7 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
+  Animated,
+  Easing,
   AppRegistry,
   StyleSheet,
   Text,
@@ -13,19 +9,23 @@ import {
 } from 'react-native';
 
 export default class animations extends Component {
+  componentWillMount() {
+    this.animatedValue = new Animated.Value(100);
+  }
+
+  componentDidMount() {
+    Animated.timing(this.animatedValue, {
+      toValue: 150,
+      duration: 1000,
+      easing: Easing.bounce
+    }).start()
+  }
+
   render() {
+    const animatedStyle = { height: this.animatedValue }
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+        <Animated.View style={[styles.box, animatedStyle]} />
       </View>
     );
   }
@@ -36,18 +36,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  box: {
+    backgroundColor: "#333",
+    width: 100,
+    height: 100,
+  }
 });
 
 AppRegistry.registerComponent('animations', () => animations);
