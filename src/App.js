@@ -6,6 +6,8 @@ import Animation1 from './components/AnimationOne';
 import Animation2 from './components/AnimationTwo';
 import Animation3 from './components/AnimationThree';
 import Animation4 from './components/AnimationFour';
+import Animation5 from './components/AnimationFive';
+import Animation6 from './components/AnimationSix';
 
 export default class App extends Component {
   render() {
@@ -17,6 +19,8 @@ export default class App extends Component {
           <Scene key="animation2" component={Animation2} title="Transform Size" type="replace"/>
           <Scene key="animation3" component={Animation3} title="Draggable Card" type="replace"/>
           <Scene key="animation4" component={Animation4} title="Animate Colors" type="replace"/>
+          <Scene key="animation5" component={Animation5} title="Animate Rotation" type="replace"/>
+          <Scene key="animation6" component={Animation6} title="Animated Sequence" type="replace"/>
         </Scene>
       </Router>
     )
@@ -31,6 +35,8 @@ class HomePage extends Component {
         <Link text="Animation Two" onPress={Actions.animation2} />
         <Link text="Animation Three" onPress={Actions.animation3} />
         <Link text="Animation Four" onPress={Actions.animation4} />
+        <Link text="Animation Five" onPress={Actions.animation5} />
+        <Link text="Animation Six" onPress={Actions.animation6} />
       </ScrollView>
     )
   }
