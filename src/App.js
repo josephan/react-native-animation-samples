@@ -8,6 +8,9 @@ import Animation3 from './components/AnimationThree';
 import Animation4 from './components/AnimationFour';
 import Animation5 from './components/AnimationFive';
 import Animation6 from './components/AnimationSix';
+import Animation7 from './components/AnimationSeven';
+import Animation8 from './components/AnimationEight';
+import Animation9 from './components/AnimationNine';
 
 export default class App extends Component {
   render() {
@@ -21,6 +24,9 @@ export default class App extends Component {
           <Scene key="animation4" component={Animation4} title="Animate Colors" type="replace"/>
           <Scene key="animation5" component={Animation5} title="Animate Rotation" type="replace"/>
           <Scene key="animation6" component={Animation6} title="Animated Sequence" type="replace"/>
+          <Scene key="animation7" component={Animation7} title="Stagger Animations" type="replace"/>
+          <Scene key="animation8" component={Animation8} title="Parallel Animations" type="replace"/>
+          <Scene key="animation9" component={Animation9} title="Flip Card" type="replace"/>
         </Scene>
       </Router>
     )
@@ -37,6 +43,9 @@ class HomePage extends Component {
         <Link text="Animation Four" onPress={Actions.animation4} />
         <Link text="Animation Five" onPress={Actions.animation5} />
         <Link text="Animation Six" onPress={Actions.animation6} />
+        <Link text="Animation Seven" onPress={Actions.animation7} />
+        <Link text="Animation Eight" onPress={Actions.animation8} />
+        <Link text="Animation Nine" onPress={Actions.animation9} />
       </ScrollView>
     )
   }
